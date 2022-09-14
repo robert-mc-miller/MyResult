@@ -1,3 +1,5 @@
+import random
+
 class Card():
     def __init__(self, suit, rank):
         self.suit = suit
@@ -20,7 +22,7 @@ class Stack():
 
     def get_cards(self):
         out = self.cards[0].get_name()
-        for x in range(len(self.cards)):
+        for x in range(1, len(self.cards)):
             out = out + ", " + self.cards[x].get_name()
         return out
 
@@ -34,10 +36,10 @@ class Stack():
             assignments = False
             
             for i in range(len(self.cards)-1):
-                
-                if int(str(ord(self.cards[i].get_suit())) + str(self.cards[i].get_rank())) > int(str(ord(self.cards[i+1].get_suit())) + str(self.cards[i+1].get_rank())):
+
+                if float(ord(self.cards[i].get_suit()) + (self.cards[i].get_rank())/13) > float(ord(self.cards[i+1].get_suit()) + ((self.cards[i+1].get_rank())/10)):
                     
-                    temp = self.cards[i]
+                    temp = self.cards[i]          
                     self.cards[i] = self.cards[i+1]
                     self.cards[i+1] = temp
                     assignments = True
@@ -48,17 +50,23 @@ class Stack():
         self.cards = self.cards + [Card]
 
 
+class Deck(Stack):
+    def __init__(self):
+        self.cards = ["H1","H2","H3","H4","H5","H6","H7","H8","H9","H10","H11","H12","H13","D1","D2","D3","D4","D5","D6","D7","D8","D9","D10","D11","D12","D13","S1","S2","S3","S4","S5","S6","S7","S8","S9","S10","S11","S12","S13","C1","C2","C3","C4","C5","C6","C7","C8","C9","C10","C11","C12","C13"]
 
-c1 = Card("H", 1)
-c2 = Card("H", 5)
-c3 = Card("H", 13)
-c4 = Card("D", 7)
-c5 = Card("D", 2)
-c6 = Card("D", 12)
-c7 = Card("C", 2)
-c8 = Card("C", 5)
-c9 = Card("S", 1)
-c10 = Card("S", 5)
+    def shuffle(self):
+        for i in range(len(self.cards)):
+            temp = self.cards[i]
+            randnum = random.randint(0,52)
+            self.cards[i] = self.cards[randnum]
+            self.cards[randnum] = temp
+
+
+c1 = Card("H", 2)
+c2 = Card("D", 3)
+c3 = Card("C", 1)
+c4 = Card("D", 13)
+c5 = Card("D", 1)
 
 s = Stack()
 s.add(c1)
@@ -66,11 +74,7 @@ s.add(c2)
 s.add(c3)
 s.add(c4)
 s.add(c5)
-s.add(c6)
-s.add(c7)
-s.add(c8)
-s.add(c9)
-s.add(c10)
+
 
 print(s.get_cards())
 s.sort()
