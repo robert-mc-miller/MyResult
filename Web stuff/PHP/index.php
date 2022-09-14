@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="first_php.php">First Php Excercise</a>
+    <br>
+    <a href="http://localhost/parse_url_one.php?type=Basset&name=Guinny&age=9">Parse URL One</a>
+    <br>
+    <a href="http://localhost/parse_url_two.php?username=zahram&password=ilovechlorinatedchicken">Parse URL Two</a>
+    <br>
+    <a href="http://localhost/parse_url_three.php?firstname1=Craig&surname1=Ballinghall&firstname2=Cameron&surname2=Craig">Parse URL Three</a>
+    <br>
+    <a href="http://localhost/parse_url_four.php?driver=Punom&start_mileage=97001&end_mileage=97203">Parse URL Two</a>
+
+
+</body>
+</html>
