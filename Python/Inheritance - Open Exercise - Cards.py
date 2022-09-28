@@ -1,4 +1,3 @@
-from hashlib import sha3_224
 import random
 
 class Card():
@@ -38,7 +37,7 @@ class Stack():
             
             for i in range(len(self.cards)-1):
 
-                if float(ord(self.cards[i].get_suit()) + (self.cards[i].get_rank())/13) > float(ord(self.cards[i+1].get_suit()) + ((self.cards[i+1].get_rank())/10)):
+                if float(ord(self.cards[i].get_suit()) + (self.cards[i].get_rank())/13) > float(ord(self.cards[i+1].get_suit()) + ((self.cards[i+1].get_rank())/13)):
                     
                     temp = self.cards[i]          
                     self.cards[i] = self.cards[i+1]
@@ -50,6 +49,31 @@ class Stack():
     def add(self, Card):
         self.cards = self.cards + [Card]
 
+    def cardSearch(self, target):
+        target = ord(target[0]) + int(target[1:])/13 
+        cards_bak = self.cards
+        self.sort()
+        s = 0
+        e = len(self.cards)
+        position = 0
+        found = False
+        while found == False and s <= e:
+            m = int((s+e)/2) 
+            if target == (self.cards[m].get_rank()/13)+(ord(self.cards[m].get_suit())):
+                position = m
+                found = True
+            elif target < (self.cards[m].get_rank()/13)+(ord(self.cards[m].get_suit())):
+                e = m - 1
+            else:
+                s = m + 1
+
+        if found == False:
+            print("Not found")
+        else:
+            print("The card has been found in the Stack")
+
+        self.cards = cards_bak
+        
 
 class Deck(Stack):
     def __init__(self):
@@ -161,5 +185,37 @@ h_om.add(Card("S", 1))
 h_om.add(Card("S", 2))
 
 print(h_om.get_cards())
+
+
+card1 = Card("D", 6)
+card2 = Card("D", 9)
+card3 = Card("H", 3)
+card4 = Card("C", 11)
+card5 = Card("C", 9)
+card6 = Card("D", 8)
+card7 = Card("H", 2)
+card8 = Card("D", 12)
+card9 = Card("C", 6)
+card10 = Card("H", 13)
+
+s18 = Stack()
+s18.add(card1) 
+s18.add(card2) 
+s18.add(card3) 
+s18.add(card4)
+s18.add(card5) 
+s18.add(card6) 
+s18.add(card7) 
+s18.add(card8) 
+s18.add(card9) 
+s18.add(card10)
+
+s18.cardSearch("C11")
+s18.cardSearch("D9")
+s18.cardSearch("H3")
+s18.cardSearch("H2")
+s18.cardSearch("C12")
+s18.cardSearch("C6")
+s18.cardSearch("C11")
 
  

@@ -16,7 +16,10 @@
     <a href="http://localhost/parse_url_three.php?firstname1=Craig&surname1=Ballinghall&firstname2=Cameron&surname2=Craig">Parse URL Three</a>
     <br>
     <a href="http://localhost/parse_url_four.php?driver=Punom&start_mileage=97001&end_mileage=97203">Parse URL Two</a>
-
+    <br>
+    <a href="http://localhost/form_get_form_data.html">Get Form Data</a>
+    <br>
+    <a href="http://localhost/form_get_form_data2.html">Get Form Data 2</a>
 
 </body>
 </html>
