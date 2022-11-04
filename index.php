@@ -20,6 +20,10 @@
     <a href="http://localhost/form_get_form_data.html">Get Form Data</a>
     <br>
     <a href="http://localhost/form_get_form_data2.html">Get Form Data 2</a>
+    <br>
+    <a href="http://localhost/ClientSide1.html">Client Side</a>
+    <br>
+    <a href="http://localhost/addFriendship.html">Add Friendship</a>
 
 </body>
 </html>
