@@ -1,0 +1,45 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 2;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f08c;
+    height: 10vh;
+}
+
+nav button:hover {
+    background-color: #727272;
+    transition: 350ms ease-in-out;
+    cursor: pointer;
+}
+
+nav button {
+    border: none;
+    width: 15%;
+    height: 10vh;
+    right: 0;
+    top: 1;
+    display: block;
+}
+
+
+
+nav button, nav h1 {
+    display: inline;
+    vertical-align: middle;
+    position: fixed;
+    top: 0;
+}
+
+nav #viewTests{
+    right: 42vw;
+}
+
+#top{
+    margin-top: 20vh;
+}

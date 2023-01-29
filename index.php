@@ -24,6 +24,8 @@
     <a href="http://localhost/ClientSide1.html">Client Side</a>
     <br>
     <a href="http://localhost/addFriendship.html">Add Friendship</a>
+    <br>
+    <a href="http://localhost/get_friends.html">Get Friendship</a>
 
 </body>
 </html>

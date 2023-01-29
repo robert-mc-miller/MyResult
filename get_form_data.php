@@ -16,7 +16,10 @@
     $final = ($score1 + $score2 + $score3)/3;
     echo "<h1>$name and $pet</h1>";
     echo "<p>After all the judges have given their score we calculate the final score by calculating the mean and rounding it off to the nearest integer. $pet has been given a final score of $final!</p>";
-
+    $sql = "INSERT INTO scores(owner_name, pet_name, total_score) VALUES ('$name', '$pet', '$final')";
+    $db = mysqli_connect('localhost', 'bruce_wayne', 'batman', 'pet_scoring') OR die(mysqli_connect_error());
+    mysqli_query($db, $sql);
+    mysqli_close($db);
         ?>
 </body>
 </html>

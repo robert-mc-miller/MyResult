@@ -7,16 +7,20 @@
     <title>Get Form Data</title>
 </head>
 <body>
-    <form action="./get_form_data.php" method="get">
+    <form action="./add_to_database.php" method="get">
         Name:
         <input type="text" name="name" required>
         <br>
         <br>
-        Jouurnal Entry:
-        <textarea type="textarea" row="20" cols="20" name="pet" required></textarea>
+        Date of Entry:
+        <input type="Date" name="date">
         <br>
         <br>
-        <input type="submit" value="Submit your rating">
+        Journal Entry:
+        <textarea type="textarea" row="20" cols="20" name="entry" required></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Log Journal Entry">
     </form>
 </body>
 </html>
