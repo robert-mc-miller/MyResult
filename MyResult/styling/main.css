@@ -1,0 +1,230 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* login and signup styling */
+
+#loginBody, #signupBody{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #72d1f6;
+    margin: 0;
+}
+
+#title, form{
+    width: 50vw;
+    text-align: center;
+    line-height: 3.5vh;   
+}
+
+form{
+    background-color: #ffffff;
+}
+
+#signup{
+    padding-top: 20vh;
+    height: 80vh;
+}
+
+#login{
+    padding-top: 25vh;
+    height: 75vh;
+}
+
+#title{
+    padding-top: 30vh;
+}
+
+.inline{
+    display: inline;
+}
+
+#error, #emailAt{
+    padding: 1vh;
+    border: red 1px solid;
+    background-color: red;
+    color: white;
+    width: 47vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 3vh;
+    border-radius: 25px;
+}
+
+.submit:hover{
+    margin-top: 3.5vh;
+    margin-left: 10px;
+    margin-bottom: 2vh;
+    box-shadow: -1vh -1vh 2px #72d1f6;
+}
+
+.submit{
+    background-color: #ffffff;
+    border: 1px solid black;
+    height: 7vh;
+    width: 20vw;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 4vh;
+    margin-bottom: 3vh;
+    transition: 0.1s ease-in-out;
+    margin-top: 2.5vh;
+}
+
+input[type=text], input[type=password], input[type=number]{
+    border-radius: 25px;
+    border: #72d1f6 solid 2px;
+    width: 15vw;
+}
+
+.emailInput{
+    margin-top: 3vh;
+}
+
+
+
+/* Index page styling */
+
+
+nav{
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 2;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f08c;
+    height: 10vh;
+}
+
+nav button:hover {
+    background-color: #727272;
+    cursor: pointer;
+}
+
+nav button {
+    border: none;
+    width: 15%;
+    height: 10vh;
+    right: 0;
+    top: 1;
+    display: block;
+    transition: 35ms ease-in-out;
+}
+
+
+
+nav button, nav h1 {
+    display: inline;
+    vertical-align: middle;
+    position: fixed;
+    top: 0;
+}
+
+
+nav h1{
+    margin-top: 2vh;
+    margin-left: 1vw;
+}
+
+nav #addTest{
+    right: 42vw;
+}
+
+#top, #noTests{
+    margin-top: 20vh;
+}
+
+#noTests{
+    text-align: center;
+}
+
+.summary {
+    background-color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    border-radius: 50%;
+    width: 60vh;
+    height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+}
+
+.summary h1 {
+    margin-top: 19vh;
+    font-size: 10vh;
+    margin-bottom: 0;
+}
+
+.summary h2 {
+    margin-top: 0;
+    font-size: 7vh;
+}
+
+table a{
+    text-decoration: none;
+    color: blue;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table{
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.more{
+    display: inline;
+}
+
+
+/* detailed test stytling */
+nav #viewTests{
+    right: 42vw;
+}
+
+#detailedTest {
+    text-align: center;
+}
+
+/* add test styling */
+
+main{
+    margin-top: 20vh;
+}
+
+#added{
+    padding: 1vh;
+    border: green 1px solid;
+    background-color: green;
+    color: white;
+    width: 47vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 25px;
+}
+
+#addTest{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media print{
+    button, .summary, .link, .more{
+        display: none;
+    }
+    
+    table{
+        margin-top: 15vh;
+    }
+
+}
