@@ -5,6 +5,7 @@ if(isset($_POST["username"]) && isset($_POST["pass"])){
     session_start();
     $username = $_POST["username"];
     $pass = $_POST["pass"];
+    $md5pass = md5($pass,0);
 
     // database connection and query
     $db = mysqli_connect("localhost", "MyResult", "MYR123!", "MyResult") or die(mysqli_connect_error());
@@ -15,7 +16,7 @@ if(isset($_POST["username"]) && isset($_POST["pass"])){
     // check if password from the query result matches the entered password
     // if so the user is redirected to index.php
     while($row = mysqli_fetch_array($result, MYSQLI_NUM)){
-        if (strcmp($pass, $row[2]) == 0){
+        if (strcmp($md5pass, $row[2]) == 0){
             $_SESSION["username"] = $username;
             $_SESSION["type"] = $row[3];
             $match = True;

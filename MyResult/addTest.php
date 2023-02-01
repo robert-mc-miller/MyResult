@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/addTest.css">
+    <link rel="stylesheet" href="./CSS/main.css">
     <title>Add Test</title>
 </head>
 <body>
@@ -30,17 +30,18 @@
 
     ?>
 
-    <form action="addTest.inc.php" method="post">
+    <form action="addTest.inc.php" method="post" id="addTest">
         <p>Test Title:</p>
-        <input type="text" name="title" maxlength="40" required>
+        <input type="text" name="title" maxlength="40" autocomplete="off" required>
         <p>Test Score:</p>
         <input type="number" name="score" required>
         <p>out of:</p>
         <input type="number" name="totalMarks" max="10000" required>
         <p>Student's Username:</p>
-        <input type="text" name="studentsUsername" maxlength="50" required>
+        <input type="text" name="studentsUsername" maxlength="50" autocomplete="off" required>
         <p>Comments</p>
         <textarea name="comments" rows="4" cols="50" maxlength="250"></textarea>
+        <br>
         <input type="submit" value="Add Test">
     </form>
     </main>

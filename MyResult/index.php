@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/main.css">
     <title>MyResult</title>
 </head>
 <body>
@@ -19,13 +19,13 @@
         if ($row[3] == 'Teacher'){
              echo "<nav>
              <h1>MyResult</h1>
-             <a href='addTest.php'><button id='addTest'>Add Test</button></a>
-             <a href='login.php'><button>Logout</button></a>
+             <a href='addTest.php' class='link'><button id='addTest'>Add Test</button></a>
+             <a href='login.php' class='link'><button>Logout</button></a>
          </nav>";
         } else {
             echo "<nav>
              <h1>MyResult</h1>
-             <a href='login.php'><button>Logout</button></a>
+             <a href='login.php' class='link'><button>Logout</button></a>
          </nav>";
         }
 
@@ -45,7 +45,7 @@
             while ($row = mysqli_fetch_array($result, MYSQLI_NUM)){
                 $out = $out . "<tr>
                 <td><a href='detailedTest.php?id=$row[0]'>
-                ".$row[1]."</a></td>
+                ".$row[1]." <p class='more'>(more details)</p></a></td>
                 <td>".round(($row[2]/$row[3])*100, 1)."%</td>
                 <td>".$row[6]."</td>
                 </tr>";
@@ -53,7 +53,7 @@
                 $total += $row[3];
             }
         } else{
-            echo "<h1 id='top'>You don't have any tests right now.</h2>";
+            echo "<h1 id='noTests'>You don't have any tests right now.</h2>";
         }
 
         if ($total > 0) {

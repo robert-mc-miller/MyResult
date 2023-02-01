@@ -8,8 +8,12 @@ if(isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["pass"]) 
     $confirm_pass = $_POST["confirm-pass"];
     $type = $_POST["account"];
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header('Location: signup.php?error=mustinclude@');
+    }
+
     // checks if the password and confirm password fields match
-    if($pass == $confirm_pass){
+    else if($pass == $confirm_pass){
 
     // query and database connection
     $db = mysqli_connect("localhost", "MyResult", "MYR123!", "MyResult") or die(mysqli_connect_error());
@@ -19,7 +23,8 @@ if(isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["pass"]) 
     // if the username and/or email have not already been used then account will be created
     // and user will be redirected to index.php
     if(mysqli_num_rows($result) < 1){
-        $query = "INSERT INTO user VALUES('$username', '$email', '$pass', '$type')";
+        $md5pass = md5($pass,0);
+        $query = "INSERT INTO user VALUES('$username', '$email', '$md5pass', '$type')";
         mysqli_query($db, $query);
         mysqli_close($db);
         session_start();

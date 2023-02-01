@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/detailedTest.css">
+    <link rel="stylesheet" href="./CSS/main.css">
     <title>MyResult</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
         }
 
         while($row = mysqli_fetch_array($result, MYSQLI_NUM)){
-        echo "<h3 id='top'>Test Title:</h3>
+        echo "<div id='detailedTest'><h3 id='top'>Test Title:</h3>
         <h2>$row[1]</h2>
         <h3>Test Score:</h3>
         <h2>$row[2]</h2>
@@ -44,7 +44,7 @@
         <h2>$row[4]</h2>";
             }       
         echo "<h3>Comments:</h3>
-        <h2>$row[6]</h2>";
+        <h2>$row[6]</h2></div>";
         }
     } else{
         echo"<p style='color: red;' id='error'>ERROR: retreiving detailis from database</p>";
