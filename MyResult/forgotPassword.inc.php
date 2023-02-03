@@ -9,7 +9,7 @@ if (isset($_POST["email"])){
     }
 
     // check if email exists in database
-    $db = mysqli_connect("localhost", "root", "", "MyResult") or die(mysqli_connect_error());
+    $db = mysqli_connect("localhost", "MyResult", "MYR123!", "MyResult") or die(mysqli_connect_error());
     $query = "SELECT * FROM user WHERE email = '$email'";
     $result = mysqli_query($db, $query);
 
@@ -58,7 +58,7 @@ else{
         // check if passwords entered match and if so update the database
         if($_POST['pass'] == $_POST['confirm-pass']){
             session_start();
-            $db = mysqli_connect("localhost", "root", "", "MyResult") or die(mysqli_connect_error());
+            $db = mysqli_connect("localhost", "MyResult", "MYR123!", "MyResult") or die(mysqli_connect_error());
             $md5pass = md5($_POST['pass'],0);
             $query = "UPDATE user SET user.password = '".$md5pass."' WHERE email = '".$_SESSION['resetEmail']."';";
             mysqli_query($db, $query);

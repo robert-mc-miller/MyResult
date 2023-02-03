@@ -17,7 +17,7 @@ if(isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["pass"]) 
     else if($pass == $confirm_pass){
 
     // query and database connection
-    $db = mysqli_connect("localhost", "root", "", "MyResult") or die(mysqli_connect_error());
+    $db = mysqli_connect("localhost", "MyResult", "MYR123!", "MyResult") or die(mysqli_connect_error());
     $query = "SELECT * FROM user WHERE username = '$username' OR email = '$email'";
     $result = mysqli_query($db, $query);
 

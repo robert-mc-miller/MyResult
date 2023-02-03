@@ -14,7 +14,7 @@
     // check if there is a logged in user
     if(isset($_SESSION["username"])){
         // retrieve the logged in users details from the database
-        $db = mysqli_connect("localhost", "root", "", "MyResult") or die(mysqli_connect_error());
+        $db = mysqli_connect("localhost", "MyResult", "MYR123!", "MyResult") or die(mysqli_connect_error());
         $query = "SELECT * FROM user WHERE username = '".$_SESSION['username']."'";
         $result = mysqli_query($db, $query);
         $row = mysqli_fetch_array($result, MYSQLI_NUM);
