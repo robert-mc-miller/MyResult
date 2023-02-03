@@ -10,7 +10,7 @@
 <body id="signupBody">
     <?php
     session_start();
-    // logs out user if they are still logged in when landing on the page
+    // logs out user if they are still logged in when arriving on the page
     if(isset($_SESSION["username"])){
     session_destroy();
     }
@@ -18,14 +18,18 @@
     ?>
     <div id="title">
     <h1>MyResult</h1>
+    <!-- Error message if displayed with JavaScript running on client side-->
     <p style='display: none;' id='emailAt'>Email must include @</p>
     <?php
-
+        // if there is an error display appropriate error message
         if(isset($_GET["error"])){
+            // not unique email/username error
             if (strcmp($_GET["error"], "notunique") == 0){
                 echo"<p id='error'>ERROR: Username/email is not unique</p>";
+            // passwords do not match error 
             } else if (strcmp($_GET["error"], "nomatch") == 0){
                 echo"<p id='error'>ERROR: Passwords do not match</p>";
+            // Email is not formmated correctly error
             } else if (strcmp($_GET["error"], "mustinclude@") == 0) {
                 echo"<p id='error'>ERROR: Email not formatted corectly<p>";
             }

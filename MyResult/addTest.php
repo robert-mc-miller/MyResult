@@ -16,12 +16,14 @@
 
     <main>
     <?php
+    // display apportpriate errors
         if(isset($_GET["error"])){
             if (strcmp($_GET["error"], "score") == 0){
                 echo"<p id='error'>ERROR: score must be less than or equal to the total marks</p>";
             } else if (strcmp($_GET["error"], "userDoesNotExist") == 0){
                 echo"<p id='error'>ERROR: Student Username does not exist</p>";
             }
+        // display successful message if test is added
         } else if(isset($_GET["added"])){
             if (strcmp($_GET["added"], "True") == 0){
                 echo"<p id='added'>TEST ADDED</p>";

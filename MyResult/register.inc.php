@@ -8,6 +8,7 @@ if(isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["pass"]) 
     $confirm_pass = $_POST["confirm-pass"];
     $type = $_POST["account"];
 
+    // checks if email has a valid format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header('Location: signup.php?error=mustinclude@');
     }

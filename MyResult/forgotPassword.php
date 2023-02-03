@@ -15,6 +15,7 @@
 
     <?php
         session_start();
+        // if the user has completed the email form display the code form
         if (isset($_GET['email'])){
             echo "<form action='forgotPassword.inc.php' method='post' class='forgotPass'>
             <h1>Forgot Password</h1>
@@ -24,6 +25,7 @@
             <input type='submit' value='Enter' class='submit'>
         </form>";
 
+        // if the user has entered correct code then display password reset form
         } else if(isset($_GET['reset'])){
             echo "<form action='forgotPassword.inc.php' method='post' class='forgotPass'>
             <h1>Forgot Password</h1>
@@ -34,11 +36,14 @@
             <br>
             <input type='submit' value='Enter' class='submit'>
         </form>";
+
+        // if the user has entered mathcing passwords display success message
         } else if (isset($_GET["complete"])){
             if ($_GET["complete"] == "True"){
                 echo "<p id='added' style='margin-top: 20vh'>Password reset succesful<p>";
             }
         }
+        // otherwise display the email form first
         else {
             echo "<form action='forgotPassword.inc.php' method='post' class='forgotPass'>
             <h1>Forgot Password</h1>
@@ -49,15 +54,21 @@
         </form>";
          }
 
+        //  check if there has been an error
         if(isset($_GET["error"])){
+            // if the error is with the email address
             if (strcmp($_GET["error"], "mustinclude@") == 0) {
                 echo"<p id='error' style='margin-top: 20vh'>ERROR: Email not formatted corectly<p>";
+            // if the error is that the email is not signed up to an account 
             } else if (strcmp($_GET["error"], "DoesNotExist") == 0) {
                 echo"<p id='error' style='margin-top: 20vh'>ERROR: Email does not exist in database<p>";
+            // if emailing the code failed
             } else if (strcmp($_GET["error"], "EmailFailed") == 0) {
                 echo"<p id='error' style='margin-top: 20vh'>ERROR: Something went wrong. Try again<p>";
+            // if the user has entered the wrong code
             } else if (strcmp($_GET["error"], "WrongCode") == 0){
                 echo"<p id='error' style='margin-top: 20vh'>ERROR: Incorrect code<p>";
+            // if the user has entered passwords that don't match
             } else if (strcmp($_GET["error"], "passwordsDontMatch") == 0){
                 echo"<p id='error' style='margin-top: 2.5vh'>ERROR: Passwords don't match<p>";
             }

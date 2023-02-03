@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+
+
+
+
 /* login and signup styling */
 
 #loginBody, #signupBody{
@@ -90,8 +94,9 @@ input[type=text], input[type=password], input[type=number]{
 
 
 
-/* Index page styling */
 
+
+/* Index page styling */
 
 nav{
     position: fixed;
@@ -118,15 +123,12 @@ nav button {
     transition: 35ms ease-in-out;
 }
 
-
-
 nav button, nav h1 {
     display: inline;
     vertical-align: middle;
     position: fixed;
     top: 0;
 }
-
 
 nav h1{
     margin-top: 2vh;
@@ -190,6 +192,9 @@ table{
 }
 
 
+
+
+
 /* detailed test stytling */
 nav #viewTests{
     right: 42vw;
@@ -198,6 +203,10 @@ nav #viewTests{
 #detailedTest {
     text-align: center;
 }
+
+
+
+
 
 /* add test styling */
 
@@ -222,7 +231,12 @@ main{
     margin-right: auto;
 }
 
+
+
+
+
 /* fogotten password styling */
+
 .forgotPass{
     margin-left: auto;
     margin-right: auto;
@@ -232,6 +246,10 @@ main{
 .forgotPass p{
     margin-top: 20vh;
 }
+
+
+
+
 
 
 /* Index page print media query */

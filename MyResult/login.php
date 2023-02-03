@@ -10,7 +10,7 @@
 <body id="loginBody">
     <?php
     session_start();
-    // logs out user if they are still logged in when landing on the page
+    // logs out user if they are still logged in when arriving on the page
     if(isset($_SESSION["username"])){
     session_destroy();
     }
@@ -21,6 +21,7 @@
     <h1>MyResult</h1>
     
     <?php
+        // displays error message if the username or password is wrong
         if(isset($_GET["error"])){
             if (strcmp($_GET["error"], "wrong") == 0){
                 echo"<p id='error'>ERROR: Incorrect username or password</p>";
