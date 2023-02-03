@@ -37,25 +37,4 @@ if (isset($_POST["title"])&&isset($_POST["score"])&&isset($_POST["totalMarks"])&
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

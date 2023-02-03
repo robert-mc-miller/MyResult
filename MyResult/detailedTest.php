@@ -56,8 +56,6 @@
         echo"<p style='color: red;' id='error'>ERROR: retreiving detailis from database</p>";
     }
 
-
-
     ?>
 
 
