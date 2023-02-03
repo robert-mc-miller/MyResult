@@ -8,7 +8,7 @@ if(isset($_POST["username"]) && isset($_POST["pass"])){
     $md5pass = md5($pass,0);
 
     // database connection and query
-    $db = mysqli_connect("localhost", "MyResult", "MYR123!", "MyResult") or die(mysqli_connect_error());
+    $db = mysqli_connect("localhost", "root", "", "MyResult") or die(mysqli_connect_error());
     $query = "SELECT * FROM user WHERE username = '$username' OR email = '$username'";
     $result = mysqli_query($db, $query);
 

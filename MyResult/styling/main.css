@@ -23,6 +23,10 @@ form{
     background-color: #ffffff;
 }
 
+form a{
+    color: black;
+}
+
 #signup{
     padding-top: 20vh;
     height: 80vh;
@@ -217,6 +221,20 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
+
+/* fogotten password styling */
+.forgotPass{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15vh;
+}
+
+.forgotPass p{
+    margin-top: 20vh;
+}
+
+
+/* Index page print media query */
 
 @media print{
     button, .summary, .link, .more{

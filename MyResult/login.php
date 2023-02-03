@@ -40,6 +40,9 @@
         <input type="submit" value="Login" class="submit">
         <br>
         <a href="signup.php">Don't already have an account?</a>
+        <br>
+        <br>
+        <a href="forgotPassword.php">Forgot your password?</a>
     </form>
     
 
