@@ -51,17 +51,13 @@
         echo "<h3>Comments:</h3>
         <h2>$row[6]</h2></div>";
         }
-    // display error if there is no set task id to retrieve
+    // display error if there is no set test id to retrieve
     } else{
-        echo"<p style='color: red;' id='error'>ERROR: retreiving detailis from database</p>";
+        echo"<p style='margin-top: 15vh;' id='error'>ERROR: retreiving details from database</p>";
     }
 
     ?>
 
-
-
-
-
-
 </body>
 </html>
+

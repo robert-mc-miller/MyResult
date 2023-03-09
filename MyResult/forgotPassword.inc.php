@@ -21,14 +21,14 @@ if (isset($_POST["email"])){
         $_SESSION['resetEmail'] = $email;
         $_SESSION["ResetCode"] = rand(100000, 999999);
 
-        $to_email = $email;
+
         $subject = "Your password reset code";
         $body = "Hi,<br> This is your password reset code for MyResult. <h1>".$_SESSION['ResetCode']."</h1>";
         $headers = "Content-type: text/html\r\n";
 
         // if email is successful move user to next form
         // else display email failed error message
-        if (mail($to_email, $subject, $body, $headers)){
+        if (mail($email, $subject, $body, $headers)){
                 header('Location: forgotPassword.php?email=success');
         }   
         else{
